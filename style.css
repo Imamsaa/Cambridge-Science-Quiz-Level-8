@@ -176,7 +176,8 @@ body{
   min-height:0;
   height:100%;
   padding:8px 12px;
-  overflow:hidden;
+  overflow:visible;
+  overflow-wrap:anywhere;
 }
 #quiz .option.selected{padding:7px 11px}
 #quiz .feedback{flex:0 0 auto;margin-top:9px;padding:9px 12px}
