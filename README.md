@@ -1,26 +1,39 @@
 # Cambridge Science Stage 8 Quiz
 
-Static website for GitHub Pages. No build step, framework, database, or external CDN is required.
+A static, GitHub Pages-ready English science quiz based on Cambridge Lower Secondary Science Learner's Book 8, Chapters 1–4.
 
-## Files
-- `index.html` — page structure
-- `style.css` — responsive dark CBT interface
+## Repository structure
+
+- `index.html` — quiz interface
+- `style.css` — responsive dark CBT styling
 - `questions.js` — 40 English multiple-choice questions (10 per chapter)
-- `script.js` — quiz logic, timer, alarm, scoring, review, and English–Indonesian word tooltip
+- `script.js` — quiz timer, navigation, alarm, scoring, review, and English–Indonesian vocabulary tooltip
 
 ## Run locally
-Open `index.html` in a modern browser.
 
-## Publish with GitHub Pages
-1. Create a GitHub repository (or open your existing repository).
-2. Upload all four files to the repository root.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, select **Deploy from a branch**.
-5. Choose branch `main` and folder `/ (root)`, then click **Save**.
-6. Wait for GitHub Pages to publish. Your site URL will look like `https://USERNAME.github.io/REPOSITORY/`.
+Open `index.html` in a modern browser. No build step, package installation, framework, database, or external CDN is required.
 
-## Notes
-- Each question has its own 10-minute countdown. Its remaining time is retained when navigating away and back.
-- The alarm uses the browser's audio API and may require the user to interact with the page first.
-- Word meanings appear on hover, keyboard focus, or tap. The built-in dictionary is contextual; uncommon words may show a generic context hint.
-- The site is fully static and does not send student answers to a server.
+## GitHub Pages deployment
+
+1. Open **Settings → Pages**.
+2. Under **Build and deployment**, select **Deploy from a branch**.
+3. Choose branch `main` and folder `/ (root)`.
+4. Save and wait for GitHub Pages to publish.
+
+The project URL will follow this format:
+
+`https://imamsaa.github.io/Cambridge-Science-Quiz-Level-8/`
+
+## Quiz features
+
+- 40 multiple-choice questions, divided evenly across Chapters 1–4.
+- English questions and answer options.
+- Word-level Indonesian translations on hover, keyboard focus, or tap.
+- A 10-minute timer for each question; remaining time is retained when navigating between questions.
+- Alarm overlay when the timer reaches zero.
+- Final score, per-chapter performance, and answer review.
+- Student responses are kept in the browser and are not submitted to a server.
+
+## Maintenance
+
+The default working branch is `main`. Future requested quiz changes should be applied directly to this branch, while preserving unrelated existing work. Verify JavaScript syntax and ensure the static file references remain relative so the project continues to work from a GitHub Pages project URL.
