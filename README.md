@@ -24,6 +24,10 @@ The project URL will follow this format:
 
 `https://imamsaa.github.io/Cambridge-Science-Quiz-Level-8/`
 
+## Interface layout
+
+The interface uses a clean white theme and is fitted to the browser viewport. Home and question screens are designed to avoid page-level scrolling. The long answer review is collapsed by default and can be expanded when needed.
+
 ## Quiz features
 
 - 40 multiple-choice questions, divided evenly across Chapters 1–4.
