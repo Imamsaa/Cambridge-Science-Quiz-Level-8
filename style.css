@@ -675,3 +675,5 @@ body{
   #quiz .feedback-explanation{font-size:11px}
   #quiz .quiz-meta .status-label{font-size:10px;padding:4px 8px}
 }
+
+.answer-status-wrap{text-align:right}
