@@ -1,76 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f8fb">
+  <meta name="theme-color" content="#f5f7fb">
   <title>Cambridge Science Stage 8 | Quiz</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tailwind.css">
 </head>
-<body>
-  <main class="app">
-    <header class="topbar">
-      <div><div class="eyebrow">CAMBRIDGE LOWER SECONDARY</div><h1>SCIENCE <span>STAGE 8</span></h1></div>
-      <div class="top-tag">40 QUESTIONS · ENGLISH</div>
+<body class="h-[100svh] overflow-hidden bg-slate-50 font-sans text-slate-900 antialiased">
+  <main class="mx-auto flex h-full w-full max-w-[1440px] flex-col gap-2 overflow-hidden px-3 py-2 sm:px-5 lg:px-8">
+    <header class="flex h-12 shrink-0 items-center justify-between gap-3">
+      <div>
+        <p class="text-[10px] font-extrabold tracking-[.2em] text-slate-500 sm:text-xs">CAMBRIDGE LOWER SECONDARY</p>
+        <h1 class="mt-0.5 text-xl font-black tracking-tight sm:text-2xl lg:text-3xl">SCIENCE <span class="text-teal-600">STAGE 8</span></h1>
+      </div>
+      <span class="shrink-0 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[9px] font-extrabold tracking-wider text-slate-600 shadow-sm sm:px-4 sm:text-xs">40 QUESTIONS · ENGLISH</span>
     </header>
 
-    <section id="home" class="screen">
-      <div class="hero panel">
-        <div class="hero-icons">🧪 🌿 ⚛️</div>
-        <p class="eyebrow">CHAPTERS 1–4</p>
-        <h2>Science Challenge</h2>
-        <p class="muted">Test your understanding of Cambridge Science. Read carefully, think scientifically, and choose the best answer.</p>
-        <div class="chapters">
-          <article><span>🫁</span><b>Chapter 1</b><small>Respiration</small><em>10 questions</em></article>
-          <article><span>🧪</span><b>Chapter 2</b><small>Properties of Materials</small><em>10 questions</em></article>
-          <article><span>⚙️</span><b>Chapter 3</b><small>Forces and Energy</small><em>10 questions</em></article>
-          <article><span>🌵</span><b>Chapter 4</b><small>Ecosystems</small><em>10 questions</em></article>
+    <section id="home" class="grid min-h-0 flex-1 grid-cols-1 grid-rows-[minmax(0,1fr)_auto_auto] gap-2 overflow-hidden lg:grid-cols-[minmax(0,1.25fr)_minmax(280px,.75fr)] lg:grid-rows-[minmax(0,1fr)_48px]">
+      <div class="flex min-h-0 flex-col justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:p-5 lg:col-start-1 lg:row-start-1 lg:p-6">
+        <div class="mb-1 text-2xl sm:text-3xl">🧪 🌿 ⚛️</div>
+        <p class="text-[10px] font-extrabold tracking-[.2em] text-teal-700 sm:text-xs">CHAPTERS 1–4</p>
+        <h2 class="mt-1 text-2xl font-black tracking-tight sm:text-3xl lg:text-4xl">Science Challenge</h2>
+        <p class="mt-2 max-w-3xl text-xs leading-relaxed text-slate-600 sm:text-sm lg:text-base">Test your understanding of Cambridge Science. Read carefully, think scientifically, and choose the best answer.</p>
+        <div class="mt-3 grid min-h-0 flex-1 grid-cols-2 grid-rows-2 gap-2 sm:mt-4 sm:gap-3">
+          <article class="flex min-h-0 flex-col justify-center rounded-xl border border-slate-200 bg-slate-50 p-2.5 sm:p-3"><span class="text-xl sm:text-2xl">🫁</span><b class="mt-1 text-xs font-extrabold sm:text-base">Chapter 1</b><small class="text-[10px] text-slate-600 sm:text-sm">Respiration</small><em class="mt-1 text-[10px] font-bold not-italic text-teal-700 sm:text-xs">10 questions</em></article>
+          <article class="flex min-h-0 flex-col justify-center rounded-xl border border-slate-200 bg-slate-50 p-2.5 sm:p-3"><span class="text-xl sm:text-2xl">🧪</span><b class="mt-1 text-xs font-extrabold sm:text-base">Chapter 2</b><small class="text-[10px] text-slate-600 sm:text-sm">Properties of Materials</small><em class="mt-1 text-[10px] font-bold not-italic text-teal-700 sm:text-xs">10 questions</em></article>
+          <article class="flex min-h-0 flex-col justify-center rounded-xl border border-slate-200 bg-slate-50 p-2.5 sm:p-3"><span class="text-xl sm:text-2xl">⚙️</span><b class="mt-1 text-xs font-extrabold sm:text-base">Chapter 3</b><small class="text-[10px] text-slate-600 sm:text-sm">Forces and Energy</small><em class="mt-1 text-[10px] font-bold not-italic text-teal-700 sm:text-xs">10 questions</em></article>
+          <article class="flex min-h-0 flex-col justify-center rounded-xl border border-slate-200 bg-slate-50 p-2.5 sm:p-3"><span class="text-xl sm:text-2xl">🌵</span><b class="mt-1 text-xs font-extrabold sm:text-base">Chapter 4</b><small class="text-[10px] text-slate-600 sm:text-sm">Ecosystems</small><em class="mt-1 text-[10px] font-bold not-italic text-teal-700 sm:text-xs">10 questions</em></article>
         </div>
       </div>
-      <div class="panel instructions">
-        <h3>QUIZ INSTRUCTIONS</h3>
-        <p>① Select one answer for each question.</p>
-        <p>② Press <b>Submit Answer</b> to confirm your choice.</p>
-        <p>③ You must submit your answer before moving to the next question.</p>
-        <p>✓ Your score and answer review will appear after all questions are submitted.</p>
-        <p>🌐 Hover over an English word to see its Indonesian meaning. On mobile, tap the word.</p>
-      </div>
-      <button id="startBtn" class="btn primary full">START QUIZ <span>→</span></button>
+
+      <aside class="flex min-h-0 flex-col justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:p-5 lg:col-start-2 lg:row-start-1 lg:p-6">
+        <h3 class="mb-2 text-xs font-black tracking-wider sm:mb-3 sm:text-sm">QUIZ INSTRUCTIONS</h3>
+        <div class="space-y-1.5 text-[11px] leading-snug text-slate-600 sm:space-y-3 sm:text-sm lg:text-base">
+          <p>① Select one answer for each question.</p>
+          <p>② Press <b class="text-slate-900">Submit Answer</b> to confirm your choice.</p>
+          <p>③ You must submit your answer before moving to the next question.</p>
+          <p>✓ Your score and answer review will appear after all questions are submitted.</p>
+          <p>🌐 Hover over an English word to see its Indonesian meaning. On mobile, tap the word.</p>
+        </div>
+      </aside>
+      <button id="startBtn" class="flex min-h-10 w-full items-center justify-center gap-2 rounded-xl bg-teal-700 px-5 py-2.5 text-sm font-extrabold text-white shadow-md shadow-teal-900/10 transition hover:bg-teal-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 lg:col-span-2 lg:row-start-2 lg:text-base">START QUIZ <span>→</span></button>
     </section>
 
-    <section id="quiz" class="screen hidden">
-      <div class="quiz-meta">
-        <div><small>QUESTION PROGRESS</small><strong id="counter">01 / 40</strong></div>
-        <div class="answer-status-wrap"><small>ANSWER STATUS</small><strong id="statusLabel" class="status-label">NOT SUBMITTED</strong></div>
+    <section id="quiz" class="hidden min-h-0 flex-1 grid-rows-[auto_6px_auto_minmax(0,1fr)_42px_auto] gap-2 overflow-hidden">
+      <div class="flex items-center justify-between">
+        <div><small class="block text-[10px] font-extrabold tracking-widest text-slate-500 sm:text-xs">QUESTION PROGRESS</small><strong id="counter" class="block text-lg font-black tabular-nums sm:text-xl">01 / 40</strong></div>
+        <div class="text-right"><small class="block text-[10px] font-extrabold tracking-widest text-slate-500 sm:text-xs">ANSWER STATUS</small><strong id="statusLabel" class="mt-1 inline-flex rounded-full border border-slate-200 bg-white px-3 py-1 text-[10px] font-extrabold tracking-wider text-slate-600 sm:text-xs">NOT SUBMITTED</strong></div>
       </div>
-      <div class="progress"><div id="progressFill"></div></div>
-      <div class="labels"><span id="chapterLabel" class="tag">CHAPTER 1</span><span id="difficulty" class="tag">EASY</span></div>
-      <article class="panel question-panel" id="questionPanel">
-        <div class="eyebrow">SCIENTIFIC THINKING</div>
-        <h2 id="questionText"></h2>
-        <div id="options" class="options"></div>
-        <div class="question-actions"><button id="submitBtn" class="btn primary" disabled>SUBMIT ANSWER</button><span id="submitHint">Choose an answer first.</span></div>
-        <div id="feedback" class="feedback hidden"></div>
-
+      <div class="h-1.5 overflow-hidden rounded-full bg-slate-200"><div id="progressFill" class="h-full w-[2.5%] rounded-full bg-teal-600 transition-all"></div></div>
+      <div class="flex items-center justify-between gap-2"><span id="chapterLabel" class="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-extrabold tracking-wider text-slate-600 sm:text-xs">CHAPTER 1 · RESPIRATION</span><span id="difficulty" class="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-[10px] font-extrabold tracking-wider text-slate-600 sm:text-xs">EASY</span></div>
+      <article id="questionPanel" class="flex min-h-0 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:p-5 lg:p-6">
+        <div class="shrink-0 text-[10px] font-extrabold tracking-[.18em] text-slate-500 sm:text-xs">SCIENTIFIC THINKING</div>
+        <h2 id="questionText" class="my-2 shrink-0 text-base font-extrabold leading-snug text-slate-900 sm:my-3 sm:text-xl lg:text-2xl"></h2>
+        <div id="options" class="grid min-h-0 flex-1 grid-rows-4 gap-1.5 sm:gap-2"></div>
+        <div class="mt-2 flex shrink-0 items-center justify-between gap-2 sm:mt-3">
+          <button id="submitBtn" class="min-h-10 min-w-36 rounded-xl bg-teal-700 px-4 py-2 text-xs font-extrabold text-white shadow-sm transition hover:bg-teal-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-40 sm:min-h-11 sm:min-w-48 sm:text-sm">SUBMIT ANSWER</button>
+          <span id="submitHint" class="text-right text-[10px] leading-snug text-slate-500 sm:text-xs">Choose an answer first.</span>
+        </div>
+        <div id="feedback" class="mt-2 hidden shrink-0 rounded-xl border px-3 py-2 text-[11px] leading-snug sm:mt-3 sm:px-4 sm:py-3 sm:text-sm"></div>
       </article>
-      <nav class="nav-buttons"><button id="prevBtn" class="btn secondary">← Previous</button><button id="nextBtn" class="btn primary" disabled>Next Question →</button></nav>
-      <div class="quiz-footer"><span id="answered">Submitted: 0 / 40</span><button id="finishBtn" class="text-btn" disabled>Finish quiz</button></div>
-      <aside class="dictionary-note"><b>WORD TRANSLATION</b><span>Hover or tap underlined words in the question and answer choices to reveal their Indonesian meanings.</span></aside>
+      <nav class="grid grid-cols-2 gap-2">
+        <button id="prevBtn" class="min-h-10 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-bold text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40 sm:text-sm" disabled>← Previous</button>
+        <button id="nextBtn" class="min-h-10 rounded-xl bg-teal-700 px-3 py-2 text-xs font-extrabold text-white shadow-sm transition hover:bg-teal-800 disabled:cursor-not-allowed disabled:opacity-40 sm:text-sm" disabled>NEXT QUESTION →</button>
+      </nav>
+      <div class="flex items-center justify-between text-[11px] text-slate-500 sm:text-xs"><span id="answered">Submitted: 0 / 40</span><button id="finishBtn" class="underline decoration-slate-400 underline-offset-2 disabled:cursor-not-allowed disabled:opacity-40" disabled>Finish quiz</button></div>
     </section>
 
-    <section id="results" class="screen hidden">
-      <div class="panel result-hero">
-        <div class="trophy">🏆</div><div class="eyebrow">QUIZ COMPLETED</div>
-        <div id="score" class="score">0%</div><p class="muted">Your final score</p>
-        <h2 id="remark">Well done!</h2>
-        <div class="stats"><div><b id="correct">0</b><small>Correct</small></div><div><b id="incorrect">0</b><small>Incorrect</small></div><div><b id="unanswered">0</b><small>Unanswered</small></div></div>
+    <section id="results" class="hidden min-h-0 flex-1 grid-rows-[auto_auto_minmax(0,1fr)_42px] gap-2 overflow-hidden">
+      <div class="rounded-2xl border border-slate-200 bg-white p-3 text-center shadow-sm sm:p-4">
+        <div class="text-3xl sm:text-4xl">🏆</div><div class="text-[10px] font-extrabold tracking-widest text-slate-500">QUIZ COMPLETED</div>
+        <div id="score" class="my-1 text-4xl font-black leading-tight text-teal-700 sm:text-5xl">0%</div><p class="text-xs text-slate-500">Your final score</p>
+        <h2 id="remark" class="mt-1 text-base font-extrabold text-slate-900 sm:text-lg">Well done!</h2>
+        <div class="mt-2 grid grid-cols-3 gap-2"><div class="rounded-xl border border-slate-200 bg-slate-50 p-2"><b id="correct" class="block text-xl font-black text-emerald-700">0</b><small class="text-[10px] text-slate-500">Correct</small></div><div class="rounded-xl border border-slate-200 bg-slate-50 p-2"><b id="incorrect" class="block text-xl font-black text-rose-600">0</b><small class="text-[10px] text-slate-500">Incorrect</small></div><div class="rounded-xl border border-slate-200 bg-slate-50 p-2"><b id="unanswered" class="block text-xl font-black text-slate-700">0</b><small class="text-[10px] text-slate-500">Unanswered</small></div></div>
       </div>
-      <div class="panel"><h3>CHAPTER PERFORMANCE</h3><div id="chapterResults" class="chapter-results"></div></div>
-      <details class="panel review-details"><summary><span><b>ANSWER REVIEW</b><small>Open to review all 40 answers and explanations</small></span><strong>＋</strong></summary><div id="review" class="review"></div></details>
-      <button id="restartBtn" class="btn primary full">RESTART QUIZ ↻</button>
+      <div class="rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:px-4"><h3 class="mb-2 text-xs font-black tracking-wider">CHAPTER PERFORMANCE</h3><div id="chapterResults" class="grid grid-cols-2 gap-x-4 gap-y-2"></div></div>
+      <details class="min-h-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3"><span><b class="block text-xs font-black tracking-wider">ANSWER REVIEW</b><small class="text-[11px] text-slate-500">Open to review all 40 answers and explanations</small></span><strong class="text-lg text-teal-700">＋</strong></summary>
+        <div id="review" class="max-h-full min-h-0 space-y-3 overflow-auto px-4 pb-4"></div>
+      </details>
+      <button id="restartBtn" class="min-h-10 rounded-xl bg-teal-700 px-4 py-2 text-sm font-extrabold text-white transition hover:bg-teal-800">RESTART QUIZ ↻</button>
     </section>
   </main>
-  <div id="tooltip" class="tooltip" role="status"></div>
+  <div id="tooltip" role="status" class="pointer-events-none fixed z-[100] hidden max-w-[280px] rounded-lg bg-slate-900 px-3 py-2 text-sm font-semibold text-white shadow-xl"></div>
   <script src="questions.js"></script>
   <script src="script.js"></script>
 </body>
