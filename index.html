@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>Cambridge Science Stage 8 | Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div><div class="eyebrow">CAMBRIDGE LOWER SECONDARY</div><h1>SCIENCE <span>STAGE 8</span></h1></div>
+      <div class="top-tag">40 QUESTIONS · ENGLISH</div>
+    </header>
+
+    <section id="home" class="screen">
+      <div class="hero panel">
+        <div class="hero-icons">🧪 🌿 ⚛️</div>
+        <p class="eyebrow">CHAPTERS 1–4</p>
+        <h2>Science Challenge</h2>
+        <p class="muted">Test your understanding of Cambridge Science. Read carefully, think scientifically, and choose the best answer.</p>
+        <div class="chapters">
+          <article><span>🫁</span><b>Chapter 1</b><small>Respiration</small><em>10 questions</em></article>
+          <article><span>🧪</span><b>Chapter 2</b><small>Properties of Materials</small><em>10 questions</em></article>
+          <article><span>⚙️</span><b>Chapter 3</b><small>Forces and Energy</small><em>10 questions</em></article>
+          <article><span>🌵</span><b>Chapter 4</b><small>Ecosystems</small><em>10 questions</em></article>
+        </div>
+      </div>
+      <div class="panel instructions">
+        <h3>QUIZ INSTRUCTIONS</h3>
+        <p>◷ Each question has a <b>10-minute countdown</b>.</p>
+        <p>→ You can move to the next question at any time.</p>
+        <p>⚠ When time runs out, an alarm will sound. Press Next to continue.</p>
+        <p>✓ Your answers are saved and scored at the end.</p>
+        <p>🌐 Hover over an English word to see its Indonesian meaning. On mobile, tap the word.</p>
+      </div>
+      <button id="startBtn" class="btn primary full">START QUIZ <span>→</span></button>
+    </section>
+
+    <section id="quiz" class="screen hidden">
+      <div class="quiz-meta">
+        <div><small>QUESTION PROGRESS</small><strong id="counter">01 / 40</strong></div>
+        <div class="timer-wrap"><small>TIME REMAINING</small><strong id="timer" class="timer">10:00</strong></div>
+      </div>
+      <div class="progress"><div id="progressFill"></div></div>
+      <div class="labels"><span id="chapterLabel" class="tag">CHAPTER 1</span><span id="difficulty" class="tag">EASY</span></div>
+      <article class="panel question-panel" id="questionPanel">
+        <div class="eyebrow">SCIENTIFIC THINKING</div>
+        <h2 id="questionText"></h2>
+        <div id="options" class="options"></div>
+        <div id="feedback" class="feedback hidden"></div>
+        <div id="timeout" class="timeout hidden">
+          <div class="timeout-content"><div class="alarm-icon">⏰</div><h2>TIME'S UP!</h2><p>Your time for this question has ended.</p><button id="timeoutNext" class="btn primary">NEXT QUESTION →</button></div>
+        </div>
+      </article>
+      <nav class="nav-buttons"><button id="prevBtn" class="btn secondary">← Previous</button><button id="nextBtn" class="btn primary">Next Question →</button></nav>
+      <div class="quiz-footer"><span id="answered">Answered: 0 / 40</span><button id="finishBtn" class="text-btn">Finish quiz</button></div>
+      <aside class="dictionary-note"><b>WORD TRANSLATION</b><span>Hover or tap underlined words in the question and answer choices to reveal their Indonesian meanings.</span></aside>
+    </section>
+
+    <section id="results" class="screen hidden">
+      <div class="panel result-hero">
+        <div class="trophy">🏆</div><div class="eyebrow">QUIZ COMPLETED</div>
+        <div id="score" class="score">0%</div><p class="muted">Your final score</p>
+        <h2 id="remark">Well done!</h2>
+        <div class="stats"><div><b id="correct">0</b><small>Correct</small></div><div><b id="incorrect">0</b><small>Incorrect</small></div><div><b id="unanswered">0</b><small>Unanswered</small></div></div>
+      </div>
+      <div class="panel"><h3>CHAPTER PERFORMANCE</h3><div id="chapterResults" class="chapter-results"></div></div>
+      <div class="panel"><h3>ANSWER REVIEW</h3><div id="review" class="review"></div></div>
+      <button id="restartBtn" class="btn primary full">RESTART QUIZ ↻</button>
+    </section>
+  </main>
+  <div id="tooltip" class="tooltip" role="status"></div>
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
