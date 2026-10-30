@@ -1,12 +1,49 @@
 (() => {
 const $ = id => document.getElementById(id);
 const chapters = ["Respiration","Properties of Materials","Forces and Energy","Ecosystems"];
-const qs = window.QUIZ_QUESTIONS.map((q,i)=>({chapter:Math.floor(i/10),q:q[0],opts:q[1],ans:q[2],exp:q[3],diff:q[4]}));
-const selections = Array(qs.length).fill(null);
-const answers = Array(qs.length).fill(null);
-const submitted = Array(qs.length).fill(false);
+let qs = [];
+const selections = [];
+const answers = [];
+const submitted = [];
 let index = 0;
 let ended = false;
+
+function shuffleArray(items){
+ const shuffled=items.slice();
+ for(let i=shuffled.length-1;i>0;i--){
+  const j=Math.floor(Math.random()*(i+1));
+  [shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];
+ }
+ return shuffled;
+}
+
+function prepareQuiz(){
+ const questionBank=window.QUIZ_QUESTIONS.map((q,i)=>{
+  const shuffledOptions=shuffleArray(q[1].map((text,optionIndex)=>({
+   text,
+   correct:optionIndex===q[2]
+  })));
+  return {
+   chapter:Math.floor(i/10),
+   q:q[0],
+   opts:shuffledOptions.map(option=>option.text),
+   ans:shuffledOptions.findIndex(option=>option.correct),
+   exp:q[3],
+   diff:q[4]
+  };
+ });
+ qs=shuffleArray(questionBank);
+ selections.length=0;
+ answers.length=0;
+ submitted.length=0;
+ for(let i=0;i<qs.length;i++){
+  selections.push(null);
+  answers.push(null);
+  submitted.push(false);
+ }
+ index=0;
+ ended=false;
+}
 const dictionary = {
 "which":"yang mana","what":"apa","where":"di mana","when":"kapan","why":"mengapa","how":"bagaimana","statement":"pernyataan","best":"terbaik","describes":"menjelaskan","describe":"jelaskan","called":"disebut","inside":"di dalam","outside":"di luar","mainly":"terutama","take":"mengambil","place":"tempat","cell":"sel","cells":"sel-sel","aerobic":"aerob (menggunakan oksigen)","respiration":"respirasi sel","releases":"melepaskan","release":"melepaskan","energy":"energi","glucose":"glukosa","using":"menggunakan","oxygen":"oksigen","moves":"bergerak","air":"udara","lungs":"paru-paru","transports":"mengangkut","blood":"darah","breaks":"memecah","food":"makanan","nucleus":"inti sel","mitochondria":"mitokondria","membrane":"membran","cytoplasm":"sitoplasma","sequence":"urutan","correct":"benar","answer":"jawaban","are":"adalah","the":"(kata sandang)","main":"utama","sites":"tempat/lokasi","of":"dari","a":"sebuah","an":"sebuah","not":"tidak","quite":"sepenuhnya/agak","explanation":"penjelasan","respiring":"melakukan respirasi","path":"jalur","nose":"hidung","trachea":"trakea","bronchi":"bronkus","bronchioles":"bronkiolus","air":"udara","sacs":"kantung","alveoli":"alveolus","surrounded":"dikelilingi","many":"banyak","capillaries":"kapiler","allow":"memungkinkan","efficient":"efisien","gas":"gas","exchange":"pertukaran","direction":"arah","diffuse":"berdifusi","diffusion":"difusi","during":"selama","relaxes":"mengendur","relax":"mengendur","contracts":"berkontraksi","contract":"berkontraksi","diaphragm":"diafragma","upwards":"ke atas","downwards":"ke bawah","breathe":"bernapas","inspired":"udara yang dihirup","expired":"udara yang diembuskan","contains":"mengandung","more":"lebih banyak","carbon":"karbon","dioxide":"dioksida","haemoglobin":"hemoglobin","red":"merah","blood":"darah","destroy":"menghancurkan","pathogens":"patogen","transport":"mengangkut","thin":"tipis","walls":"dinding","short":"pendek","distance":"jarak","rapid":"cepat","living":"hidup","germinating":"berkecambah","seeds":"biji","insulated":"terisolasi","flask":"labu","temperature":"suhu","rise":"kenaikan","greater":"lebih besar","dead":"mati",
 "sugar":"gula","solution":"larutan","solvent":"pelarut","solute":"zat terlarut","water":"air","dissolves":"melarutkan","dissolve":"melarutkan","substance":"zat","liquid":"cairan","container":"wadah","floats":"mengapung","saturated":"jenuh","maximum":"maksimum","amount":"jumlah","dissolved":"terlarut","solubility":"kelarutan","solid":"padat","solid":"benda padat","increases":"meningkat","increases":"meningkat","temperature":"suhu","independent":"bebas","variable":"variabel","mass":"massa","salt":"garam","dependent":"terikat","measured":"diukur","result":"hasil","volume":"volume","kept":"dipertahankan","constant":"konstan","fair":"adil","investigation":"penyelidikan","purpose":"tujuan","pencil":"pensil","line":"garis","paper":"kertas","chromatography":"kromatografi","graphite":"grafit","insoluble":"tidak larut","solvent":"pelarut","interfere":"mengganggu","chromatogram":"kromatogram","separate":"memisahkan","spots":"titik-titik","mixture":"campuran","coloured":"berwarna","sample":"sampel","ink":"tinta","pure":"murni",
@@ -105,14 +142,7 @@ function render(){
 function selectAnswer(n){
  if(submitted[index])return;
  selections[index]=n;
- $("options").querySelectorAll("[data-option]").forEach((b,i)=>{
-  b.classList.toggle("border-2",i===n);
-  b.classList.toggle("border-teal-600",i===n);
-  b.classList.toggle("bg-teal-50",i===n);
-  b.classList.toggle("text-teal-950",i===n);
- });
- $("submitBtn").disabled=false;
- $("submitHint").textContent="Answer selected. Press Submit Answer to confirm.";
+ render();
 }
 function submitAnswer(){
  if(submitted[index]||selections[index]===null)return;
@@ -141,6 +171,7 @@ function finish(){
  }).join("");
 }
 $("startBtn").addEventListener("click",()=>{
+ prepareQuiz();
  $("home").classList.add("hidden");$("quiz").classList.remove("hidden");$("quiz").classList.add("grid");render();
 });
 $("submitBtn").addEventListener("click",submitAnswer);
@@ -148,8 +179,9 @@ $("nextBtn").addEventListener("click",()=>{if(submitted[index]){if(index===qs.le
 $("prevBtn").addEventListener("click",()=>go(index-1));
 $("finishBtn").addEventListener("click",finish);
 $("restartBtn").addEventListener("click",()=>{
- selections.fill(null);answers.fill(null);submitted.fill(false);index=0;ended=false;
+ prepareQuiz();
  $("review").innerHTML="";$("results").classList.add("hidden");$("results").classList.remove("grid");
+ $("quiz").classList.add("hidden");$("quiz").classList.remove("grid");
  $("home").classList.remove("hidden");updateAnswered();
 });
 })();
