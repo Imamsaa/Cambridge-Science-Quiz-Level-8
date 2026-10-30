@@ -7,7 +7,7 @@ A static, GitHub Pages-ready English science quiz based on Cambridge Lower Secon
 - `index.html` — quiz interface
 - `style.css` — responsive dark CBT styling
 - `questions.js` — 40 English multiple-choice questions (10 per chapter)
-- `script.js` — quiz timer, navigation, alarm, scoring, review, and English–Indonesian vocabulary tooltip
+- `script.js` — question navigation, explicit answer submission, scoring, review, and English–Indonesian vocabulary tooltip
 
 ## Run locally
 
@@ -33,8 +33,10 @@ The interface uses a clean white theme and is fitted to the browser viewport. Ho
 - 40 multiple-choice questions, divided evenly across Chapters 1–4.
 - English questions and answer options.
 - Word-level Indonesian translations on hover, keyboard focus, or tap.
-- A 10-minute timer for each question; remaining time is retained when navigating between questions.
-- Alarm overlay when the timer reaches zero.
+- No countdown timer or alarm.
+- Students select an option first, then press **Submit Answer** to confirm it.
+- The next-question button stays disabled until the current answer has been submitted.
+- Submitted answers are locked and receive immediate correctness feedback.
 - Final score, per-chapter performance, and answer review.
 - Student responses are kept in the browser and are not submitted to a server.
 
