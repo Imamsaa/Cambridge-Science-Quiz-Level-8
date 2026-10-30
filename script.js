@@ -61,6 +61,7 @@ function render(){
  $("tooltip").style.display="none";
  const q=qs[index];
  const isSubmitted=submitted[index];
+ $("questionPanel").classList.toggle("submitted",isSubmitted);
  $("counter").textContent=String(index+1).padStart(2,"0")+" / "+qs.length;
  $("progressFill").style.width=((index+1)/qs.length*100)+"%";
  $("chapterLabel").textContent="CHAPTER "+(q.chapter+1)+" · "+chapters[q.chapter].toUpperCase();
