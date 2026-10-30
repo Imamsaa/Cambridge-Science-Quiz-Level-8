@@ -31,6 +31,7 @@ The interface is built with Tailwind CSS utility classes, uses a clean white the
 ## Quiz features
 
 - 40 multiple-choice questions, divided evenly across Chapters 1–4.
+- Questions and answer choices are shuffled for each new quiz session.
 - English questions and answer options.
 - Word-level Indonesian translations on hover, keyboard focus, or tap.
 - No countdown timer or alarm.
