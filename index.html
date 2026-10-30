@@ -29,10 +29,10 @@
       </div>
       <div class="panel instructions">
         <h3>QUIZ INSTRUCTIONS</h3>
-        <p>◷ Each question has a <b>10-minute countdown</b>.</p>
-        <p>→ You can move to the next question at any time.</p>
-        <p>⚠ When time runs out, an alarm will sound. Press Next to continue.</p>
-        <p>✓ Your answers are saved and scored at the end.</p>
+        <p>① Select one answer for each question.</p>
+        <p>② Press <b>Submit Answer</b> to confirm your choice.</p>
+        <p>③ You must submit your answer before moving to the next question.</p>
+        <p>✓ Your score and answer review will appear after all questions are submitted.</p>
         <p>🌐 Hover over an English word to see its Indonesian meaning. On mobile, tap the word.</p>
       </div>
       <button id="startBtn" class="btn primary full">START QUIZ <span>→</span></button>
@@ -41,7 +41,7 @@
     <section id="quiz" class="screen hidden">
       <div class="quiz-meta">
         <div><small>QUESTION PROGRESS</small><strong id="counter">01 / 40</strong></div>
-        <div class="timer-wrap"><small>TIME REMAINING</small><strong id="timer" class="timer">10:00</strong></div>
+        <div class="timer-wrap"><small>ANSWER STATUS</small><strong id="statusLabel" class="status-label">NOT SUBMITTED</strong></div>
       </div>
       <div class="progress"><div id="progressFill"></div></div>
       <div class="labels"><span id="chapterLabel" class="tag">CHAPTER 1</span><span id="difficulty" class="tag">EASY</span></div>
@@ -49,13 +49,12 @@
         <div class="eyebrow">SCIENTIFIC THINKING</div>
         <h2 id="questionText"></h2>
         <div id="options" class="options"></div>
+        <div class="question-actions"><button id="submitBtn" class="btn primary" disabled>SUBMIT ANSWER</button><span id="submitHint">Choose an answer first.</span></div>
         <div id="feedback" class="feedback hidden"></div>
-        <div id="timeout" class="timeout hidden">
-          <div class="timeout-content"><div class="alarm-icon">⏰</div><h2>TIME'S UP!</h2><p>Your time for this question has ended.</p><button id="timeoutNext" class="btn primary">NEXT QUESTION →</button></div>
-        </div>
+
       </article>
-      <nav class="nav-buttons"><button id="prevBtn" class="btn secondary">← Previous</button><button id="nextBtn" class="btn primary">Next Question →</button></nav>
-      <div class="quiz-footer"><span id="answered">Answered: 0 / 40</span><button id="finishBtn" class="text-btn">Finish quiz</button></div>
+      <nav class="nav-buttons"><button id="prevBtn" class="btn secondary">← Previous</button><button id="nextBtn" class="btn primary" disabled>Next Question →</button></nav>
+      <div class="quiz-footer"><span id="answered">Submitted: 0 / 40</span><button id="finishBtn" class="text-btn" disabled>Finish quiz</button></div>
       <aside class="dictionary-note"><b>WORD TRANSLATION</b><span>Hover or tap underlined words in the question and answer choices to reveal their Indonesian meanings.</span></aside>
     </section>
 
