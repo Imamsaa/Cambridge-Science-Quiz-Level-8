@@ -5,13 +5,13 @@ A static, GitHub Pages-ready English science quiz based on Cambridge Lower Secon
 ## Repository structure
 
 - `index.html` — quiz interface
-- `style.css` — responsive dark CBT styling
+- Tailwind CSS v4 utility classes in `index.html` and dynamic quiz components in `script.js`
 - `questions.js` — 40 English multiple-choice questions (10 per chapter)
 - `script.js` — question navigation, explicit answer submission, scoring, review, and English–Indonesian vocabulary tooltip
 
 ## Run locally
 
-Open `index.html` in a modern browser. No build step, package installation, framework, database, or external CDN is required.
+Open `index.html` in a modern browser. No local build step or package installation is needed. The Tailwind Browser script is loaded from jsDelivr, so an internet connection is required to style the page.
 
 ## GitHub Pages deployment
 
@@ -26,7 +26,7 @@ The project URL will follow this format:
 
 ## Interface layout
 
-The interface uses a clean white theme and is fitted to the browser viewport. Home and question screens are designed to avoid page-level scrolling. The long answer review is collapsed by default and can be expanded when needed.
+The interface is built with Tailwind CSS utility classes, uses a clean white theme, and fits the home and quiz screens to the browser viewport. The long answer review is collapsed by default and can be expanded when needed. The project currently uses Tailwind's Play CDN for rapid iteration; Tailwind documents this CDN as development-only, not the recommended production setup.
 
 ## Quiz features
 
@@ -42,4 +42,4 @@ The interface uses a clean white theme and is fitted to the browser viewport. Ho
 
 ## Maintenance
 
-The default working branch is `main`. Future requested quiz changes should be applied directly to this branch, while preserving unrelated existing work. Verify JavaScript syntax and ensure the static file references remain relative so the project continues to work from a GitHub Pages project URL.
+The default working branch is `main`. Future requested quiz changes should be applied directly to this branch, while preserving unrelated existing work. Verify JavaScript syntax and ensure the static file references remain relative so the project continues to work from a GitHub Pages project URL. For production without a runtime CDN dependency, compile Tailwind CSS to a static stylesheet with the Tailwind CLI and replace the Browser CDN script.
