@@ -505,3 +505,82 @@ body{
   #results .trophy{font-size:24px}
   #results .score{font-size:36px}
 }
+
+
+/* ===== Final fullscreen polish: clean text and roomier answer choices ===== */
+#quiz .dictionary-note{display:none!important}
+
+/* Glossary words remain interactive without making every sentence look like a hyperlink. */
+.word{
+  border-bottom:1px dotted transparent;
+  text-decoration:none;
+  cursor:help;
+}
+.word:hover,.word:focus{
+  border-bottom-color:#147f7a;
+  background:#eaf7f5;
+  outline:none;
+  border-radius:2px;
+}
+
+/* Fullscreen classroom/projector desktop: use the space for the actual question. */
+@media (min-width:701px) and (min-height:651px){
+  .app{
+    width:min(1360px,calc(100% - 64px));
+    padding:12px 0;
+    gap:10px;
+  }
+  .topbar{min-height:56px}
+  #quiz{
+    grid-template-rows:auto 7px auto minmax(0,1fr) 48px auto;
+    gap:10px;
+  }
+  #quiz .question-panel{
+    padding:clamp(20px,2vw,30px);
+    min-height:0;
+  }
+  #quiz .question-panel h2{
+    font-size:clamp(22px,1.7vw,26px);
+    line-height:1.35;
+    margin:10px 0 16px;
+  }
+  #quiz .options{
+    grid-template-rows:repeat(4,minmax(48px,1fr));
+    gap:9px;
+  }
+  #quiz .option,
+  #quiz .option.selected{
+    min-height:48px;
+    padding:10px 16px;
+    align-items:center;
+    font-size:clamp(18px,1.4vw,21px);
+    line-height:1.3;
+    gap:14px;
+    border-radius:14px;
+  }
+  #quiz .option.selected{padding:9px 15px}
+  #quiz .option-letter{font-size:20px;min-width:24px}
+  #quiz .nav-buttons .btn{min-height:48px;font-size:16px}
+  #quiz .quiz-footer{font-size:13px}
+  #quiz .quiz-meta small{font-size:12px}
+  #quiz .quiz-meta strong{font-size:23px}
+  #quiz .timer{font-size:36px!important}
+}
+
+/* For projector windows around 720p high, compact the header before shrinking question text. */
+@media (min-width:701px) and (min-height:651px) and (max-height:800px){
+  .app{padding:8px 0;gap:8px}
+  .topbar{min-height:50px}
+  #quiz{gap:8px;grid-template-rows:auto 7px auto minmax(0,1fr) 44px auto}
+  #quiz .question-panel{padding:16px 20px}
+  #quiz .question-panel h2{font-size:22px;margin:7px 0 11px}
+  #quiz .options{grid-template-rows:repeat(4,minmax(44px,1fr));gap:7px}
+  #quiz .option,#quiz .option.selected{min-height:44px;font-size:18px;padding:8px 13px}
+  #quiz .option.selected{padding:7px 12px}
+  #quiz .nav-buttons .btn{min-height:44px}
+}
+
+/* On narrower screens, keep the same word-translation behavior with no extra footer panel. */
+@media (max-width:700px){
+  #quiz .dictionary-note{display:none!important}
+}
