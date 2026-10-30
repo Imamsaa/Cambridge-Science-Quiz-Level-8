@@ -24,7 +24,7 @@ function prepareQuiz(){
    correct:optionIndex===q[2]
   })));
   return {
-   chapter:Math.floor(i/10),
+   chapter:Math.floor(i/25),
    q:q[0],
    opts:shuffledOptions.map(option=>option.text),
    ans:shuffledOptions.findIndex(option=>option.correct),
