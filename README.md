@@ -6,7 +6,7 @@ A static, GitHub Pages-ready English science quiz based on Cambridge Lower Secon
 
 - `index.html` — quiz interface
 - Tailwind CSS v4 utility classes in `index.html` and dynamic quiz components in `script.js`
-- `questions.js` — 40 English multiple-choice questions (10 per chapter)
+- `questions.js` — 100 English multiple-choice questions (25 per chapter)
 - `script.js` — question navigation, explicit answer submission, scoring, review, and English–Indonesian vocabulary tooltip
 
 ## Run locally
@@ -30,7 +30,7 @@ The interface is built with Tailwind CSS utility classes, uses a clean white the
 
 ## Quiz features
 
-- 40 multiple-choice questions, divided evenly across Chapters 1–4.
+- 100 multiple-choice questions, divided evenly across Chapters 1–4 (25 per chapter).
 - Questions and answer choices are shuffled for each new quiz session.
 - English questions and answer options.
 - Word-level Indonesian translations on hover, keyboard focus, or tap.
