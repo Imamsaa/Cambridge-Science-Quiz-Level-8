@@ -512,7 +512,7 @@ window.QUIZ_QUESTIONS = [
       "Potassium chlorate"
     ],
     0,
-    "At 20°C the table gives calcium chloride 74 g, sodium chloride 36 g, copper sulfate 20 g and potassium chlorate 32 g per 100 g of water.",
+    "At 20°C the table gives calcium chloride 74 g, sodium chloride 36 g, copper sulfate 32 g and potassium chlorate 7 g per 100 g of water.",
     "Hard"
   ],
   [
